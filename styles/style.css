@@ -128,6 +128,10 @@
   block-size: 100%;
 }
 
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
 .header__theme-menu-item:has(.header__theme-menu-button_active) {
   outline: 1px solid var(--button-menu-color);
 }
@@ -179,6 +183,7 @@
 
 .footer__title_text {
   text-shadow: 2px 2px 0 var(--header-shadow-color);
+  cursor: pointer;
 }
 
 /* ********************************************************************************** */
@@ -186,6 +191,10 @@
 @media (hover: hover) {
   .content__text_link:hover {
     border-bottom: 1px solid currentColor;
+  }
+
+  .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+    cursor: pointer;
   }
 
   .header__theme-menu-item:has(.header__theme-menu-button:hover) {
