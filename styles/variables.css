@@ -2,3 +2,25 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --header-color: #db00ff;
+  --header-shadow-color: #ff0070;
+  --header-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --button-menu-color: #ff0070;
+  --button-hover-color: rgba(255, 0, 112, 0.4);
+  --text-color: #f1b2ce;
+  --text-accent-color: #ff0070;
+  --accent-text-color: #000028;
+  --accent-bg-color: #ff0070;
+  --bg-color: #000028;
+  --sections-gap: 40px;
+  --common-indent: 20px;
+}
+
+@media (width < 768px) {
+  :root {
+    --header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    --sections-gap: 30px;
+    --common-indent: 10px;
+  }
+}

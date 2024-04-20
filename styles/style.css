@@ -1,5 +1,303 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-color: var(--bg-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  top: var(--common-indent);
+  right: var(--common-indent);
+  border-top: 1px solid var(--button-menu-color);
+  border-right: 1px solid var(--button-menu-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  bottom: var(--common-indent);
+  left: var(--common-indent);
+  border-bottom: 1px solid var(--button-menu-color);
+  border-left: 1px solid var(--button-menu-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.record__lamp {
+  position: absolute;
+  top: calc(var(--common-indent) + 1px);
+  right: calc(var(--common-indent) + 19px);
+  color: var(--button-menu-color);
+  text-transform: uppercase;
+}
+
+.record__lamp::after {
+  content: '';
+  position: relative;
+  top: -1px;
+  left: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px currentColor;
+  background-color: currentColor;
+  block-size: 9px;
+  inline-size: 9px;
+}
+
+.content__text {
+  color: var(--text-color);
+}
+
+.content__text-accent {
+  color: var(--text-accent-color);
+  font-weight: 700;
+}
+
+.subtitle_accent {
+  margin-block-start: 10px;
+  color: var(--accent-text-color);
+  background-color: var(--accent-bg-color);
+}
+
+.subtitle_accent_text-bold {
+  font-weight: 700;
+  background-color: var(--accent-bg-color);
+}
+
+.content__text_link {
+  display: inline-block;
+  height: 1.2em;
+  text-decoration: none;
+  text-shadow: 3px 2px var(--accent-bg-color);
+}
+
+.content__text_link:focus-visible {
+  border-bottom: none;
+  outline: 1px solid currentColor;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+  padding: var(--common-indent);
+  min-block-size: 530px;
+}
+
+.title_text {
+  position: relative;
+  color: var(--header-color);
+  font-weight: 700;
+  font-size: var(--header-font-size);
+  line-height: 83%;
+  text-shadow: 4px 4px 0 var(--header-shadow-color);
+}
+
+.header__theme-menu {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 12px;
+}
+
+.header__theme-menu-item {
+  inline-size: 68px;
+  block-size: 24px;
+}
+
+.header__theme-menu-button {
+  margin-block-start: -3px;
+  border-style: none;
+  color: var(--button-menu-color);
+  font-size: 18px;
+  text-transform: lowercase;
+  background-color: transparent;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button_active) {
+  outline: 1px solid var(--button-menu-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--button-menu-color);
+  outline: none;
+}
+
+.header__text {
+  justify-self: flex-end;
+  align-self: center;
+}
+
+.main__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sections-gap);
+  margin-block-start: var(--sections-gap);
+  margin-block-end: var(--sections-gap);
+}
+
+.section__content {
+  display: grid;
+  gap: var(--common-indent);
+  padding: var(--common-indent);
+}
+
+.section__content_text {
+  row-gap: 10px;
+  column-gap: var(--common-indent);
+}
+
+.images__grid_image {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: var(--common-indent);
+  min-block-size: 150px;
+}
+
+.footer__title_text {
+  text-shadow: 2px 2px 0 var(--header-shadow-color);
+}
+
+/* ********************************************************************************** */
+
+@media (hover: hover) {
+  .content__text_link:hover {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .header__theme-menu-item:has(.header__theme-menu-button:hover) {
+    outline: 1px solid var(--button-hover-color);
+  }
+}
+
+@media (width <= 594px) {
+  .section__content_text > .subtitle_accent_text-bold {
+    margin-block-start: 10px;
+  }
+}
+
+@media (width <= 770px) {
+  .header__theme-menu {
+    margin-inline-end: 0;
+    margin-block-start: auto;
+    margin-block-end: auto;
+    padding-block-end: 30px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    margin-block-start: 30px;
+  }
+}
+
+@media (width > 594px) {
+  .header__title {
+    margin-inline-start: calc(0px - var(--common-indent));
+  }
+
+  .header__text {
+    inline-size: 50%;
+  }
+
+  .section__content_question > .content__text-accent {
+    grid-row: span 4;
+  }
+
+  .section__content_solution > .content__text-accent {
+    grid-row: span 11;
+  }
+
+  .section__content_images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section__content_question > .subtitle_accent_text-bold:not(:first-of-type),
+  .section__content_reason > .subtitle_accent_text-bold {
+    margin-block-start: 10px;
+  }
+
+  .section__content_images > .subtitle_accent_text-bold {
+    grid-column: span 3;
+  }
+
+  .images__grid_image:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .images__grid_image:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .images__grid_image:nth-child(4) {
+    grid-row: span 2;
+  }
+
+  .images__grid_image:nth-child(6) {
+    grid-column: span 2;
+
+    block-size: 99%;
+    align-self: end;    
+  }
+}
+
+@media (594px < width <= 770px) {
+  .section__content_text {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section__content_reason > .content__text-accent {
+    grid-row: span 2;
+  }
+
+  .section__content_reason > .subtitle_accent_text-bold,
+  .section__content_reason > .content__text {
+    grid-column: span 2;
+  }
+}
+
+@media (width >= 770px) {
+  .section__content_text {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section__content_question > .subtitle_accent_text-bold,
+  .section__content_question > .content__text,
+  .section__content_solution > .subtitle_accent_text-bold,
+  .section__content_solution > .subtitle_accent,
+  .section__content_solution > .content__text {
+    grid-column: span 2;
+  }
+
+  .section__content_reason {
+    grid-template-rows: min-content min-content 1fr;
+    grid-auto-flow: column;
+  }
+
+  .section__content_reason > .content__text-accent {
+    grid-column: span 3;
+    max-width: 33.333%;
+  }
 }
