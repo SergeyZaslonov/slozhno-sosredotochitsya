@@ -49,7 +49,7 @@
     --header-shadow-color: #ff0070;
   }
   @media (prefers-color-scheme: light) {
-    .page.theme_light {
+    .page {
       --header-shadow-color: #ff0070;
     }
   }
