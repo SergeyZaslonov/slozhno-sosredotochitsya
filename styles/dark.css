@@ -21,6 +21,6 @@
   */
 }
 
-.page.theme_dark > .record__lamp {
+.page.theme_dark > .header > .record__lamp {
   display: block;
 }

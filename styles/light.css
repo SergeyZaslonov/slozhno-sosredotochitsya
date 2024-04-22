@@ -40,7 +40,7 @@
   }
 }
 
-.page.theme_light > .record__lamp {
+.page.theme_light > .header > .record__lamp {
   display: none;
 }
 
