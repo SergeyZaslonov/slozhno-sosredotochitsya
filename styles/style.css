@@ -94,6 +94,14 @@
   background-color: var(--accent-bg-color);
 }
 
+.subtitle_accent__text-bold:not(:last-child) {
+  margin-block-end: 10px;
+}  
+
+.section__images_subtitle.section__images_subtitle {
+    margin-block-end: 0;
+}
+
 .header {
   position: relative;
   display: grid;
@@ -294,11 +302,9 @@
     grid-template-columns: 315px 2fr;
   }
 
-  .section__content_reason {
+  .context-items-list_reason {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: min-content 1fr;
-    grid-auto-flow: column;
     column-gap: var(--common-indent);
   }
 
