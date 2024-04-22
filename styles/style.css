@@ -96,7 +96,7 @@
 
 .subtitle_accent__text-bold:not(:last-child) {
   margin-block-end: 10px;
-}  
+}
 
 .section__images_subtitle.section__images_subtitle {
     margin-block-end: 0;
@@ -185,7 +185,7 @@
 .section_content {
   display: flex;
   flex-direction: column;
-  gap: 10px;    
+  gap: 10px;
 }
 
 .images__grid_image {
@@ -245,9 +245,9 @@
   .main__section_text {
     grid-template-areas: 'header content';
   }
-  
+
   .main__section_reason {
-    grid-template-areas: 
+    grid-template-areas:
     'header .'
     'content content';
   }
